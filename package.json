@@ -1,0 +1,28 @@
+{
+  "name": "compass-api",
+  "version": "0.0.1",
+  "description": "API wrapper for compass.education",
+  "main": "compass-api.js",
+  "dependencies": {
+    "asynckit": "^0.4.0",
+    "axios": "^1.4.0",
+    "combined-stream": "^1.0.8",
+    "delayed-stream": "^1.0.0",
+    "follow-redirects": "^1.15.2",
+    "form-data": "^4.0.0",
+    "mime-db": "^1.52.0",
+    "mime-types": "^2.1.35",
+    "proxy-from-env": "^1.1.0"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idkfelix/compass-api.git"
+  },
+  "author": "idkfelix",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/idkfelix/compass-api/issues"
+  },
+  "homepage": "https://github.com/idkfelix/compass-api#readme"
+}
