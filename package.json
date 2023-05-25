@@ -2,7 +2,7 @@
   "name": "compass-api",
   "version": "0.0.1",
   "description": "API wrapper for compass.education",
-  "main": "compass-api.js",
+  "main": "index.js",
   "dependencies": {
     "asynckit": "^0.4.0",
     "axios": "^1.4.0",
