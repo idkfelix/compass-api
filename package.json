@@ -1,5 +1,5 @@
 {
-  "name": "compass-edu-api",
+  "name": "@idkfelix/compass-api",
   "version": "0.0.1",
   "description": "API wrapper for https://compass.education",
   "main": "dist/index.js",
@@ -16,6 +16,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/idkfelix/compass-api.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
     "API"
