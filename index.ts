@@ -32,8 +32,6 @@ class Session {
             const sessionId = sessionIdCookie.split(';')[0].split('=')[1];
             this.sessionId = sessionId
           }
-          console.log(this.sessionId)
-          console.log(this.userId)
         })
     } catch (error) {
       console.error(error);
