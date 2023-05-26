@@ -42,7 +42,7 @@ class Session {
     uri: string,
     method: string,
     data: any
-  ): Promise<any> {
+  ) {
     let options = {
       method: method,
       url: `https://${this.prefix}.compass.education${uri}`,
@@ -62,19 +62,19 @@ class Session {
     }
   }
 
-  async getAccount(): Promise<any> {
+  async getAccount() {
     let r = await this.makeRequest('/Services/Accounts.svc/GetAccount', 'POST', null);
     return(r)
   }
 
-  async getPersonalDetails(): Promise<any> {
+  async getPersonalDetails() {
     let r = await this.makeRequest('/services/mobile.svc/GetMobilePersonalDetails', 'POST', {
       'userId': this.userId,
     });
     return(r)
   }
 
-  async getTimetable(): Promise<any> {
+  async getTimetable() {
     const formattedDate = new Date().toLocaleString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric'})+' - 12:00 am';
     let r = await this.makeRequest('/Services/mobile.svc/GetScheduleLinesForDate', 'POST', {
       'userId': this.userId,
@@ -83,7 +83,7 @@ class Session {
     return(r)
   }
 
-  async getLessonById(instanceId:string): Promise<any> {
+  async getLessonById(instanceId:string) {
     let r = await this.makeRequest('/services/mobile.svc/GetInstanceById', 'POST', {
       'userId': this.userId,
       'instanceId': instanceId
@@ -91,7 +91,7 @@ class Session {
     return(r)
   }
 
-  async getStaff(): Promise<any> {
+  async getStaff() {
     let r = await this.makeRequest('/Services/User.svc/GetAllStaff', 'POST', {
       'userId': this.userId,
     });
