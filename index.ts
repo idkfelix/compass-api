@@ -6,33 +6,34 @@ interface Session {
 }
 
 class Session {
-  constructor(private prefix: string, private user: string, private pass: string,) {
+  constructor(private prefix: string) {
     this.prefix = prefix
+  }
 
+  async auth (username: string, password: string,) {
     let options = {
       method: 'POST',
-      url: `https://${prefix}.compass.education/services/admin.svc/AuthenticateUserCredentials`,
+      url: `https://${this.prefix}.compass.education/services/admin.svc/AuthenticateUserCredentials`,
       headers: {
+        cookie: `ASP.NET_SessionId=${this.sessionId}`,
         Accept: '*/*',
         'Content-Type': 'application/json'
       },
       data: {
-        'username': user,
-        'password': pass
-      }
+            'username': username,
+            'password': password
+          }
     };
-  
+
     try {
-      axios.request(options)
-        .then((res: any) => {
-          this.userId = res.data['d']['roles'][0]['userId']
-          let cookies:any = res.headers['set-cookie'];
+      const response = await axios.request(options);
+      this.userId = response.data['d']['roles'][0]['userId']
+      let cookies:any = response.headers['set-cookie'];
           let sessionIdCookie = cookies.find((cookie:any) => cookie.includes('ASP.NET_SessionId='));
           if (sessionIdCookie) {
             const sessionId = sessionIdCookie.split(';')[0].split('=')[1];
             this.sessionId = sessionId
           }
-        })
     } catch (error) {
       console.error(error);
     }
