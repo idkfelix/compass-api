@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/idkfelix/compass-api/issues"
   },
-  "homepage": "https://github.com/idkfelix/compass-api#readme"
+  "homepage": "https://github.com/idkfelix/compass-api#readme",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
 }
