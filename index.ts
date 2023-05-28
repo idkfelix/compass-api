@@ -76,6 +76,14 @@ class Session {
     return(r)
   }
 
+  async getUserById(targetUserId:string) {
+    let r = await this.makeRequest('/services/User.svc/GetUserDetailsBlobByUserId', 'POST', {
+      'userId': this.userId,
+      'targetUserId': targetUserId
+    });
+    return(r)
+  }
+
   async getTimetable(date:string) {
     const formattedDate = `${date} - 12:00 am`
     let r = await this.makeRequest('/Services/mobile.svc/GetScheduleLinesForDate', 'POST', {
