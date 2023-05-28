@@ -1,6 +1,6 @@
 {
   "name": "@idkfelix/compass-api",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "API wrapper for https://compass.education",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
